@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import CartWidget from './components/CartWidget'
+
 
 const NavBar = () => {
   return (
@@ -25,6 +27,10 @@ const NavBar = () => {
       </li>
     </ul>
   </div>
+  <a href="#"class="text-decoration-none">
+    <CartWidget/>
+  </a>
+
 </nav>
      
   )
