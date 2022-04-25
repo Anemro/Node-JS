@@ -3,8 +3,10 @@ import { BsCart2 } from "react-icons/bs";
 
 const CartWidget = () => {
   return (    
-    <div class="justify-content-end"><BsCart2/></div>
+    <a href="#"class="justify-content-end">
+    <BsCart2/></a>
   )
 }
+    
 
 export default CartWidget
