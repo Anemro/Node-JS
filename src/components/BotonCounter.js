@@ -1,22 +1,20 @@
 import React from 'react'
 import { useState } from 'react'
 
-const BotonCounter = (stock,initial) => {
+const BotonCounter = ( props ) => {
 
-    //const [count, setCount] = useState({initial}) Se rompe el layout si hago esto
-
-    const [count, setCount] = useState(1)
+  
+    const [count, setCount] = useState(props.initial)
     const minusHandler = () => { 
-        setCount(count-1)
-       // if (count>1){     No funciona este condicional
-       //     setCount(count-1)
-      //  }
+       if (count > 1){
+            setCount(count-1)
+        }
     }
     const addHandler = () => { 
-        setCount(count+1)
-       // if (count<{stock}){     No funciona este condicional
-       //     setCount(count+1)
-       // }
+       
+       if (count<props.stock){
+           setCount(count + 1)
+       }
     }
 
     return (
@@ -28,9 +26,4 @@ const BotonCounter = (stock,initial) => {
     )
 }
    
-
-
-
-
-
 export default BotonCounter

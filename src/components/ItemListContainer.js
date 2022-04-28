@@ -1,20 +1,16 @@
 import React from 'react'
-import BotonCounter from './BotonCounter'
-import CartWidget from './CartWidget'
+import Item from './Item'
 
-function ItemListContainer({name, precio}) {
+const ItemListContainer = () =>{
   return (
-  <div class="col-md-3 col-sm-6 col-xs-12 card p-3">
-    <img src="./logoTienda.jpeg" class="card-img-top" alt="kits imprimibles"></img>
-  <div class="card-body">
-    <h5 class="card-title">{name}</h5>
-    <p class="card-text">Todos los archivos son editables. Agregame!!</p>
-    <p class="card-text">{precio}</p>
-    <BotonCounter initial="1" stock="3"/>
-    <CartWidget/>
-  </div>
-</div>
+    <>
+    <Item name='Bob Esponja' precio='$750'/>
+    <Item name='Hombre Araña' precio='$500'/>
+    <Item name='Sirenita' precio='$250'/>
+    <Item name='Astronautas' precio='$400'/>
+    <Item name='Jovenes Titanes' precio='$650'/>
+    <Item name='Animales del bosque' precio='$200'/>
+    </>
   )
 }
-
 export default ItemListContainer

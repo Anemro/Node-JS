@@ -9,12 +9,7 @@ function App() {
       <NavBar/>
       <div class="container">
         <div class="row ">
-          <ItemListContainer name='Bob Esponja' precio='$750'/>
-          <ItemListContainer name='Hombre Araña' precio='$500'/>
-          <ItemListContainer name='Sirenita' precio='$250'/>
-          <ItemListContainer name='Astronautas' precio='$400'/>
-          <ItemListContainer name='Jovenes Titanes' precio='$650'/>
-          <ItemListContainer name='Animales del bosque' precio='$200'/>
+          <ItemListContainer></ItemListContainer>
         </div>
       </div>
     </div>
