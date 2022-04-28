@@ -19,9 +19,9 @@ const BotonCounter = ( props ) => {
 
     return (
         <>
-          <button class="btn" onClick={minusHandler}>-</button>
-          <strong class="p-3">{count}</strong>
-          <button class="btn" onClick={addHandler}>+</button>
+          <button className="btn" onClick={minusHandler}>-</button>
+          <strong className="p-3">{count}</strong>
+          <button className="btn" onClick={addHandler}>+</button>
         </>
     )
 }

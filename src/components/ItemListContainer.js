@@ -1,15 +1,30 @@
-import React from 'react'
 import Item from './Item'
+import productDB from '../data/product'
+import React, {useEffect, useState} from 'react'
+import ItemList from './ItemList';
 
-const ItemListContainer = () =>{
+function getProducts(){
+  return new Promise( (resolve, reject) =>{
+    setTimeout(() => {
+        resolve(productDB);
+    }, 500);
+  });
+}
+
+
+const ItemListContainer = ({titulo}) =>{
+  const [productEstado , setProduct] = useState([]);
+  useEffect( () =>{ 
+    getProducts().then(respuestaPromise => {
+     setProduct(respuestaPromise);
+    })
+
+  },[]);
+
+
   return (
     <>
-    <Item name='Bob Esponja' precio='$750'/>
-    <Item name='Hombre Araña' precio='$500'/>
-    <Item name='Sirenita' precio='$250'/>
-    <Item name='Astronautas' precio='$400'/>
-    <Item name='Jovenes Titanes' precio='$650'/>
-    <Item name='Animales del bosque' precio='$200'/>
+    <ItemList product={productEstado}/>
     </>
   )
 }

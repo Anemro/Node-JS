@@ -1,21 +1,26 @@
 import React from 'react'
 import BotonCounter from './BotonCounter'
 import CartWidget from './CartWidget'
+import product from '../data/product'
+import ItemList from './ItemList'
 
 
-const Item = ({name, precio}) => { 
+const Item = ({product}) => { 
 
     return (
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 card">
-          <img src="./logoTienda.jpeg" class="card-img-top" alt="kits imprimibles"></img>
-        <div class="card-body">
-          <h5 class="card-title">{name}</h5>
-          <p class="card-text">Todos los archivos son editables. Agregame!!</p>
-          <p class="card-text">{precio}</p>
-          <BotonCounter initial={1} stock={3}/>
-          <CartWidget/>
+    <>
+        <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 card">
+            <img src="./logoTienda.jpeg" className="card-img-top" alt="kits imprimibles"></img>
+            <div className="card-body">
+            <h5 className="card-title">{product.title}</h5>
+            <p className="card-text">{product.description}</p>
+            <p className="card-text">{product.price}</p>
+            <BotonCounter initial={1} stock={3}/>
+            <CartWidget/>
+            </div>
         </div>
-      </div>
-        )
- }
+    </>
+    )
+}
+        
  export default Item
