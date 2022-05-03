@@ -1,7 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+/* import ItemListContainer from './components/ItemListContainer'; */
+import ItemDetailContainer from './components/ItemDetailContainer';
+
 
 function App() {
   return (
@@ -9,7 +10,13 @@ function App() {
       <NavBar/>
       <div className="container">
         <div className="row ">
-          <ItemListContainer></ItemListContainer>
+          {/* <ItemListContainer></ItemListContainer> */}
+          <ItemDetailContainer id={6}></ItemDetailContainer>
+          <ItemDetailContainer id={2}></ItemDetailContainer>
+          <ItemDetailContainer id={3}></ItemDetailContainer>
+          <ItemDetailContainer id={4}></ItemDetailContainer>
+          <ItemDetailContainer id={1}></ItemDetailContainer>
+          <ItemDetailContainer id={7}></ItemDetailContainer>
         </div>
       </div>
     </div>

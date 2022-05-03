@@ -1,23 +1,26 @@
 const product = [{
     "id": 1,
     "title": "Bob Esponja",
+    "imageUrl":"https://static3.abc.es/media/play/2020/06/15/bobesponja-k1pG--1200x630@abc.jpg",
     "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
     "price": "$2189.17",
-    "stock": 1,
+    "stock": 3,
     "genere": "kitImprimible"
   }, 
   {
     "id": 2,
     "title": "Hombre Araña",
-    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+    "imageUrl":"https://cdn.pixabay.com/photo/2020/09/11/00/06/spiderman-5561671_960_720.jpg",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
     "price": "$330.32",
     "stock": 18,
     "genere": "kitImprimible"
   }, 
   {
     "id": 3,
-    "title": "Sirenita",
-    "description": "Phasellus in felis.",
+    "title": "La Sirenita",
+    "imageUrl":"https://www.elimparcial.com/__export/1607701386219/sites/elimparcial/img/2020/12/11/lasirenitafotos_22794083_275632912957687_7447981338650476544_n.jpg_423682103.jpg",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
     "price": "$4344.40",
     "stock": 13,
     "genere": "candyBar"
@@ -25,7 +28,8 @@ const product = [{
   {
     "id": 4,
     "title": "Astronautas",
-    "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.",
+    "imageUrl":"https://i.pinimg.com/550x/12/5b/47/125b4749900b13cbacf81faade2a5f8f.jpg",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
     "price": "$4185.77",
     "stock": 18,
     "genere": "kitImprimible"
@@ -33,6 +37,7 @@ const product = [{
   {
     "id": 5,
     "title": "Jovenes Titanes",
+    "urlImage":"https://static3.abc.es/media/play/2020/06/15/bobesponja-k1pG--1200x630@abc.jpg",
     "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. ",
     "price": "$1533.82",
     "stock": 6,
@@ -40,8 +45,9 @@ const product = [{
   }, 
   {
     "id": 6,
-    "title": "Animales del bosque",
-    "description": "Nulla suscipit ligula in lacus.",
+    "title": "Animales del Bosque",
+    "imageUrl":"https://i.pinimg.com/736x/86/0d/92/860d92607167c40cb728c1b6e1bd40f7.jpg",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
     "price": "$2876.43",
     "stock": 14,
     "genere": "kitImprimible"
@@ -49,7 +55,8 @@ const product = [{
   {
     "id": 7,
     "title": "Matsoft",
-    "description": "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. ",
+    "imageUrl":"./logoTienda.jpeg",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
     "price": "$3336.48",
     "stock": 8,
     "genere": "candyBar"
