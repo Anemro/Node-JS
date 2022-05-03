@@ -1,25 +1,36 @@
-import Item from './Item'
 import productDB from '../data/product'
 import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList';
+import { useParams } from 'react-router-dom'
 
-function getProducts(){
+function getProducts(categoryid){
   return new Promise( (resolve, reject) =>{
     setTimeout(() => {
-        resolve(productDB);
-    }, 500);
+      if(categoryid){
+        const arrayFiltered = productDB.filter ( (product) => {
+          return product.genere === categoryid;
+        });
+        resolve(arrayFiltered);
+
+      }else {
+        resolve(productDB)
+      }
+      
+    }, 700);
   });
 }
 
 
 const ItemListContainer = ({titulo}) =>{
   const [productEstado , setProduct] = useState([]);
+  const { categoryid }= useParams()
+  console.log("ID: " + categoryid)
   useEffect( () =>{ 
-    getProducts().then(respuestaPromise => {
+    getProducts(categoryid).then(respuestaPromise => {
      setProduct(respuestaPromise);
     })
 
-  },[]);
+  },[categoryid]);
 
 
   return (

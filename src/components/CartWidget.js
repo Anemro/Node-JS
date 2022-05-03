@@ -1,10 +1,11 @@
 import React from 'react'
 import { BsCart2 } from "react-icons/bs";
+import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
   return (    
-    <a href="#"className="justify-content-end">
-    <BsCart2/></a>
+    <Link to="/category/car" className="justify-content-end">
+    <BsCart2/></Link>
   )
 }
     

@@ -1,8 +1,10 @@
 import BotonCounter from './BotonCounter'
+import CartWidget from './CartWidget'
 
 const ItemDetail = ({product}) => { 
 
     return (
+        
     <>
         <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 card">
             <img
@@ -16,6 +18,9 @@ const ItemDetail = ({product}) => {
             <p className="card-text">{product.description}</p>
             <p className="card-text">{product.price}</p>
             <BotonCounter initial={1} stock={product.stock}/>
+            <div>
+                <CartWidget/>
+            </div>
             </div>
         </div>
     </>
