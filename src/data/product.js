@@ -37,8 +37,8 @@ const product = [{
   {
     "id": 5,
     "title": "Jovenes Titanes",
-    "urlImage":"https://static3.abc.es/media/play/2020/06/15/bobesponja-k1pG--1200x630@abc.jpg",
-    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. ",
+    "imageUrl":"https://i.pinimg.com/originals/c0/38/3d/c0383d96c7f38792e946df4fdba83216.jpg",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
     "price": "$1533.82",
     "stock": 6,
     "genere": "kitImprimible"
