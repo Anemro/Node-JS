@@ -1,8 +1,14 @@
 import BotonCounter from './BotonCounter'
-import CartWidget from './CartWidget'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({product}) => { 
+    const [isInCart, setInCart] = useState(false)
 
+    function onAdd (count) {
+        console.log(`agregaste al carrito ${count} items.`)
+        setInCart(true)
+      }
     return (
         
     <>
@@ -23,10 +29,14 @@ const ItemDetail = ({product}) => {
               <div className="product-price">
                   <span>{product.price}</span>
                   <div>
-                     <BotonCounter initial={1} stock={product.stock}/>
+                      { isInCart? 
+                          <Link to={'/cart/cart'} className="btn primary p-2 m-2">Ir al carrito</Link>
+                          :
+                          <BotonCounter onAdd={onAdd} initial={1} stock={product.stock}/>
+                      }
+                    
                   </div>
-                  <a href="#" className="cart-btn"><CartWidget/></a>
-              </div>
+               </div>
             </div>    
         </main>
         <div className="resume">
@@ -58,27 +68,11 @@ const ItemDetail = ({product}) => {
                   <li>Jueguito Ta Te Ti Animalitos de la Granja tamaño A4 (editable)</li>
               </ul>
             </div>
-
-            
-       {/*  <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 card">
-            <img
-                src={product.imageUrl}
-                className="card-img-top"
-                alt={product.title}
-            />
-
-            <div className="card-body">
-            <h5 className="card-title">{product.title}</h5>
-            <p className="card-text">{product.description}</p>
-            <p className="card-text">{product.price}</p>
-            <BotonCounter initial={1} stock={product.stock}/>
-            <div>
-                <CartWidget/>
-            </div>
-            </div>
-        </div> */}
     </>
     )
 }
+
+            
+       
         
  export default ItemDetail

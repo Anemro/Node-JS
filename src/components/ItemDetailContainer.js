@@ -16,6 +16,7 @@ function getProduct(id){
 
 
 const ItemDetailContainer = ({ id }) =>{
+ 
   const [product , setProduct] = useState([]);
   const { itemid } = useParams()
 
@@ -29,7 +30,7 @@ const ItemDetailContainer = ({ id }) =>{
 
   return (
     <>
-    <ItemDetail product={product}/>
+    <ItemDetail product={product}/> 
     </>
   )
 }
