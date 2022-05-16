@@ -1,10 +1,15 @@
 import React from 'react'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
+import UseCartContex from '../store/CartContext'
+
+
 
 
 
 const NavBar = () => {
+  const { contexFuntion } = UseCartContex ()
+  
   return (
     
 <nav className="navbar navbar-expand-lg navbar-light">

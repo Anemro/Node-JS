@@ -1,13 +1,16 @@
 import BotonCounter from './BotonCounter'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import useCartContex from '../store/CartContext'
 
 const ItemDetail = ({product}) => { 
     const [isInCart, setInCart] = useState(false)
+    const { addToCart } = useCartContex();
+
 
     function onAdd (count) {
-        console.log(`agregaste al carrito ${count} items.`)
         setInCart(true)
+        addToCart(product,count);
       }
     return (
         
