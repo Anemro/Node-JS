@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { useContext } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+
 
 
 //1_limpiar carrito - Listo
@@ -17,15 +17,26 @@ export function CartContexProvider( { children } ) {
     const addToCart = (item,cant) => {
         if (isInCart(item.id)){
             const newCart = cart.map(cartItem => {
-            })
-            setCart(newCart);
-        }else {
-            const newItem = {...item, cant};
-            setCart([...cart, newItem]) 
-        }   
-    }
+               if(cartItem.id === item.id){
+                        const copyItem = {...cartItem}
+                        copyItem.cant +=cant
+                        return copyItem
+                    }
+                    else
+                        return cartItem; 
+                    })
+                    setCart(newCart);
+                }else {
+                    const newItem = {...item, cant};
+                    setCart([...cart, newItem]) 
+                }   
+            }
+                
+                
+                
+        
 
-    const removeToCart = (id) => {
+    const removeFromCart = (id) => {
         const newCart = [...cart]
         const cartFilter = newCart.filter(item => {
             return item.id !== id
@@ -34,33 +45,28 @@ export function CartContexProvider( { children } ) {
     }
 
     const cleanCart = () => {
-         return cart.length = 0
+        setCart([])
     }
 
     const isInCart = (id) => {
         return cart.some( itemCart => itemCart.id === id)
     }
 
-    const countInCart = (id) => {
+    const getItemFromCart = (id) => {
         return cart.find( itemCart => itemCart.id === id)
+}
 
-    }
 
-    const totalPriceCart = () => {
-
-    }
 
 
     return(
-        <Provider value={ { CartContex, cart, addToCart } }>
+        <Provider value={ { CartContex, cleanCart, getItemFromCart, removeFromCart, cart, addToCart } }>
             {children}
-        </Provider>
-        
-        
-        
-        
+        </Provider>    
         )
     
 }
-
+        
 export default useCartContex
+        
+        

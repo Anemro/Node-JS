@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
   return (    
-    <Link to="/category/car" className="justify-content-end">
+    <Link to="/category/cart" className="justify-content-end">
     <BsCart2/></Link>
   )
 }
