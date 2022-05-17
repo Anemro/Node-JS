@@ -54,13 +54,28 @@ export function CartContexProvider( { children } ) {
 
     const getItemFromCart = (id) => {
         return cart.find( itemCart => itemCart.id === id)
-}
+    }
+
+    const cantInCart = () => {
+        const total = cart.map(item => item.cant).reduce((prev, curr)=> prev +curr, 0)
+        return total
+        //const total = 0
+        //return total
+        //cart.forEach(cartItem => cartItem.cant).reduce((ant, sig) => ant + sig, 0)
+    }
+        
+   
+     
+
+    const calcPriceCart = () => {
+        //total del carrito
+    }
 
 
 
 
     return(
-        <Provider value={ { CartContex, cleanCart, getItemFromCart, removeFromCart, cart, addToCart } }>
+        <Provider value={ { CartContex, cleanCart, getItemFromCart, removeFromCart, cart, addToCart, cantInCart, calcPriceCart } }>
             {children}
         </Provider>    
         )

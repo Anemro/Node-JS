@@ -2,8 +2,9 @@ import React from 'react'
 import useCartContex from '../store/CartContext'
 
 function CartView() {
-    const { cart, cleanCart, removeFormCart } = useCartContex();
+    const { cart, cleanCart, removeFromCart } = useCartContex();
   
+    console.log(cart)
     if(cart.length === 0){
         return (
             <>
@@ -20,9 +21,9 @@ function CartView() {
                     <div key={itemCart.id}>
                     <h2>{ itemCart.title }</h2>
                     <h2>{ itemCart.cant }</h2>
-                    <h2>${ itemCart.cant * itemCart.price }</h2>
+                    <h2>${ (itemCart.cant * itemCart.price).toFixed(2) }</h2>
                     </div>
-                    <button onClick={() => removeFormCart(itemCart.id)}>x</button>
+                    <button onClick={() => removeFromCart(itemCart.id)}>x</button>
                     </>
                     )
                 })}
