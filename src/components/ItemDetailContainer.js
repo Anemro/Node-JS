@@ -1,18 +1,9 @@
-import productDB from '../data/product'
+import { getItem as getProduct } from '../data';
 import React, {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 
-function getProduct(id){
-  return new Promise( (resolve, reject) =>{
-    setTimeout(() => {
-        const productFound = productDB.find( (product) => { 
-            return parseInt(id) === product.id
-         } )
-        resolve(productFound);
-    }, 1500);
-  });
-}
+
 
 
 const ItemDetailContainer = ({ id }) =>{

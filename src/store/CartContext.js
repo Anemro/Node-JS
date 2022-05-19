@@ -59,9 +59,6 @@ export function CartContexProvider( { children } ) {
     const cantInCart = () => {
         const total = cart.map(item => item.cant).reduce((prev, curr)=> prev +curr, 0)
         return total
-        //const total = 0
-        //return total
-        //cart.forEach(cartItem => cartItem.cant).reduce((ant, sig) => ant + sig, 0)
     }
         
    
