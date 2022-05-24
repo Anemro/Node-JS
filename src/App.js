@@ -17,7 +17,7 @@ function App() {
       <CartContexProvider>
         <BrowserRouter>
           <NavBar/>
-          {/* <button onClick={ dataToFireBase }>Subir datos</button>  Boton actualizar base de datos*/}
+          {/* <button onClick={ dataToFireBase }>Subir datos</button> */}
           <Routes>
             <Route path="/" element={<ItemListContainer titulo="Hola desde React Router"/>}/>
             <Route path="/category/:categoryid" element={<ItemListContainer titulo="Categoria de Productos"/>}/>

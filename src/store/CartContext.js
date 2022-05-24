@@ -3,10 +3,6 @@ import { useContext, useState } from 'react';
 
 
 
-//1_limpiar carrito - Listo
-//2_comprobar si x item esta en el carrito ----> Array.some()
-//3_ devolver la cantidad de item en el carrito
-
 const CartContex = createContext()
 const { Provider } = CartContex;
 const useCartContex = () => useContext (CartContex)
@@ -65,7 +61,9 @@ export function CartContexProvider( { children } ) {
      
 
     const calcPriceCart = () => {
-        //total del carrito
+        let totalPrice = 0
+        cart.forEach(item => totalPrice += item.cant * item.price)
+        return totalPrice
     }
 
 

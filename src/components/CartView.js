@@ -1,10 +1,31 @@
 import React from 'react'
+import { createBuyOrder } from '../data';
 import useCartContex from '../store/CartContext'
 
 function CartView() {
-    const { cart, cleanCart, removeFromCart } = useCartContex();
-  
-    console.log(cart)
+    const { cart, cleanCart, removeFromCart,calcPriceCart} = useCartContex();
+    function buy () {
+        const itemsToBuy = cart.map((item) => ({
+            title: item.title,
+            cant: item.cant,
+            price: item.price,
+            id: item.id
+        }))
+        const buyOrder = {
+            buyer : {
+                name: 'Andres',
+                phone: '1134408993',
+                email: 'andresemarodriguez@gmail.com',
+            },
+            items : itemsToBuy,
+            total : calcPriceCart()
+        }
+        createBuyOrder(buyOrder)
+        cleanCart()
+    }
+
+
+
     if(cart.length === 0){
         return (
             <>
@@ -27,10 +48,16 @@ function CartView() {
                     </>
                     )
                 })}
+         
+               
                 <button className="btn btn-primary" onClick={cleanCart}>Vaciar Carrito</button>
+                <button className="btn btn-primary" onClick={buy}>Comprar</button>
                 </div>
             }
         }
+                
+                
+                
                     
 
 

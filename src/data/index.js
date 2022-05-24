@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, query, where, getDoc } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, doc, query, where, getDoc, Timestamp, addDoc, setDoc } from 'firebase/firestore/lite';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -55,3 +55,19 @@ export async function getItem(id){
   return {...productSnap.data(),id: productSnap.id} 
 }
   
+export async function dataToFireBase(){
+
+}
+export async function createBuyOrder(orderData){
+  const buyTimestamp = Timestamp.now();
+  const orderWithDate = {...orderData,date: buyTimestamp}
+  const miColec = collection (firestoreDB, 'buyOrders')
+  const orderDoc = await addDoc(miColec, orderWithDate)
+
+
+  console.log("orden lista con ID:", orderDoc.id)
+}
+
+  
+
+
